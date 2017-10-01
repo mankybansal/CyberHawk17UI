@@ -1,0 +1,19 @@
+{
+  "name": "CyberHawk17UI",
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "roboto-fontface": "^0.8.0",
+    "font-awesome": "^4.7.0"
+  }
+}
