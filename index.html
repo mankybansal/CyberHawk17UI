@@ -42,14 +42,14 @@
         .headerContainer, .footerContainer {
             height: 100%;
             box-sizing: border-box;
-            padding: 20px;
+            padding: 21.5px;
             font-family: Roboto-Light, sans-serif;
-            font-size: 20px;
+            font-size: 17px;
             color: white;
         }
 
         .footerContainer {
-            color: rgba(255,255,255,.25);
+            color: rgba(255, 255, 255, .5);
         }
 
         .leftPanel {
@@ -102,7 +102,8 @@
 
         .timeCapsuleWindow {
             width: 600px;
-            height: 500px;
+            height: 70%;
+            top: 15%;
             background: white;
             position: absolute;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
@@ -114,6 +115,45 @@
             box-sizing: border-box;
             padding: 5px;
         }
+
+        .menuOption {
+            padding: 21.5px 15px 21.5px 15px;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 0.5);
+            transition: all ease .5s;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .menuOption:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        .countBubble {
+            width: 20px;
+            height: 20px;
+            background: #A63425;;
+            display: inline-block;
+            margin-left: 10px;
+            box-sizing: border-box;
+            border-radius: 2px;
+            padding: 5px;
+            font-size: 10px;
+            text-align: center;
+            vertical-align: top;
+            font-family: Roboto-Regular, sans-serif;
+        }
+
+        .avatarContainer {
+            width: 45px;
+            height: 45px;
+            margin-top: 7.5px;
+            float: right;
+            background: #A63425;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
     </style>
 
     <script>
@@ -124,12 +164,35 @@
 
 <div class="header">
 
-    <div class="headerContainer" style="float: right;">
-        <span style="font-family: Roboto-Regular, sans-serif;  color: #7F3225;">Logout</span>
+    <div class="avatarContainer">
+
     </div>
+
+
     <div class="headerContainer" style="float: right;">
-        <span style="color: rgba(255,255,255,.5)">Welcome, &nbsp;</span>
-        <span style="font-family: Roboto-Regular, sans-serif">Mayank Bansal</span>
+        <span style="color: rgba(255,255,255,.5)">Welcome,&nbsp;</span>
+        <span style="font-family: Roboto-Regular, sans-serif">Mayank Bansal</span> &nbsp;
+        <i class="fa fa-angle-down"></i>
+    </div>
+
+
+    <div class="headerContainer menuOption" style="float: right;">
+        <div style="display: inline-block; vertical-align: top;">Notifications &nbsp;<i class="fa fa-bell"></i></div>
+        <div class="countBubble">0</div>
+    </div>
+
+    <div class="headerContainer menuOption" style="float: right;">
+        <div style="display: inline-block; vertical-align: top;">Progress &nbsp;<i class="fa fa-clock-o"></i></div>
+        <div class="countBubble">0</div>
+    </div>
+
+    <div class="headerContainer menuOption" style="float: right;">
+        Stats &nbsp;<i class="fa fa-area-chart"></i>
+    </div>
+
+
+    <div class="headerContainer menuOption" style="float: right;">
+        Rules &nbsp;<i class="fa fa-legal"></i>
     </div>
 
     <div class="headerLogo">
@@ -144,7 +207,13 @@
 
     <div class="timeCapsuleContainer">
         <div class="timeCapsuleWindow"
-             style="transform: perspective(325px)  translate3d(0px, 0px, 0px); z-index: 8;"></div>
+             style="transform: perspective(325px)  translate3d(0px, 0px, 0px); z-index: 8;">
+
+            <div class="levelContainer"></div>
+            <div class="questionContainer"></div>
+            <div class="answerContainer"></div>
+
+        </div>
         <div class="timeCapsuleWindow"
              style="transform: perspective(325px)  translate3d(0px, -50px, -50px); z-index: 7;"></div>
         <div class="timeCapsuleWindow"
