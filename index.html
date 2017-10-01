@@ -107,6 +107,7 @@
             background: white;
             position: absolute;
             box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
         .headerLogo {
@@ -154,11 +155,138 @@
             overflow: hidden;
         }
 
+        .levelContainer {
+            width: 100%;
+            height: 100px;
+            float: top;
+            background: #222;
+
+            box-sizing: border-box;
+            font-size: 30px;
+            padding: 35px;
+            color: #FFF;
+            font-family: Roboto-Thin, sans-serif;
+            text-align: left;
+        }
+
+        .questionContainer {
+            width: 100%;
+            height: calc(100% - 250px);
+            background: #333;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            font-size: 25px;
+            font-family: Roboto-Thin, sans-serif;
+            padding: 35px;
+            color: #FFF;
+            text-align: left;
+        }
+
+        .answerContainer {
+            width: 100%;
+            height: 100px;
+            float: top;
+            background: #EEE;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            text-align: left;
+            padding: 25px 35px 25px 35px;
+
+        }
+
+        .statusContainer {
+            width: 100%;
+            height: 50px;
+            float: top;
+            background: #222;
+            color: white;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            font-family: Roboto-Light, sans-serif;
+            font-size: 17px;
+            padding: 16.5px 35px 16.5px 35px;
+            text-align: left;
+        }
+
+        .hintsContainer {
+            height: calc(50% - 3px);
+            border: 3px solid #DDD;
+            width: 100%;
+            float: top;
+            overflow: auto;
+        }
+
+        .recentContainer {
+            height: 50%;
+            width: 100%;
+            float: top;
+            overflow: auto;
+        }
+
+        .recentTitle, .hintsTitle {
+            width: 100%;
+            font-family: Roboto-Light, sans-serif;
+            font-size: 25px;
+            padding: 25px 25px 10px 25px;
+            text-align: left;
+            color: #555;
+            box-sizing: border-box;
+        }
+
+        .hint, .recent {
+            width: 100%;
+            padding: 0 25px 10px 25px;
+            display: inline-block;
+            text-align: left;
+            box-sizing: border-box;
+            font-size: 17px;
+            float: top;
+            color: #777;
+        }
+
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: rgba(0, 0, 0, 0.5);
+            font-family: Roboto-Light, sans-serif;
+        }
+
+        .answerInput {
+            width: 450px;
+            height: 50px;
+            outline: none;
+            border: none;
+            background: rgba(0, 0, 0, 0);
+            font-size: 25px;
+            color: #333;
+            font-family: Roboto-Light, sans-serif;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+            transition: all ease .5s;
+            float: left;
+        }
+
+        .answerInput:focus {
+            border-bottom: 3px solid rgba(51, 51, 51, 1);
+            padding-bottom: 10px;
+        }
+
+        .answerSubmit {
+            width: calc(100% - 470px);
+            height: 100%;
+            float: left;
+            margin-left: 20px;
+            box-sizing: border-box;
+            padding: 12.5px;
+            font-size: 25px;
+            text-align: center;
+            color: #333;
+            transition: all ease .5s;
+            border-radius: 5px;
+        }
+
+        .answerSubmit:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
     </style>
 
-    <script>
-
-    </script>
 </head>
 <body>
 
@@ -170,14 +298,14 @@
 
 
     <div class="headerContainer" style="float: right;">
-        <span style="color: rgba(255,255,255,.5)">Welcome,&nbsp;</span>
+        <span style="color: rgba(255,255,255,.5)">Hi,&nbsp;</span>
         <span style="font-family: Roboto-Regular, sans-serif">Mayank Bansal</span> &nbsp;
         <i class="fa fa-angle-down"></i>
     </div>
 
 
     <div class="headerContainer menuOption" style="float: right;">
-        <div style="display: inline-block; vertical-align: top;">Notifications &nbsp;<i class="fa fa-bell"></i></div>
+        <div style="display: inline-block; vertical-align: top;">Alerts &nbsp;<i class="fa fa-bell"></i></div>
         <div class="countBubble">0</div>
     </div>
 
@@ -192,6 +320,12 @@
 
 
     <div class="headerContainer menuOption" style="float: right;">
+        <div style="display: inline-block; vertical-align: top;">Achievements &nbsp;<i class="fa fa-trophy"></i></div>
+        <div class="countBubble">0</div>
+    </div>
+
+
+    <div class="headerContainer menuOption" style="float: right;">
         Rules &nbsp;<i class="fa fa-legal"></i>
     </div>
 
@@ -202,16 +336,41 @@
 <div class="content">
 
     <div class="leftPanel">
-
+        <div class="hintsContainer">
+            <div class="hintsTitle"><i class="fa fa-lightbulb-o"></i> &nbsp;Hints:</div>
+            <div class="hintGroup">
+                <div class="hint">
+                    There are no hints available right now. Come back later.
+                </div>
+            </div>
+        </div>
+        <div class="recentContainer">
+            <div class="recentTitle"><i class="fa fa-history"></i> &nbsp;Recent Tries:</div>
+            <div class="recentGroup">
+                <div class="recent">
+                    You haven't made any attempts for this question.
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="timeCapsuleContainer">
         <div class="timeCapsuleWindow"
              style="transform: perspective(325px)  translate3d(0px, 0px, 0px); z-index: 8;">
 
-            <div class="levelContainer"></div>
-            <div class="questionContainer"></div>
-            <div class="answerContainer"></div>
+            <div class="levelContainer">Level 0</div>
+            <div class="questionContainer">
+
+                Are you ready to play CyberHawk 2017?
+
+            </div>
+            <div class="answerContainer">
+                <input type="text" class="answerInput" placeholder="What's your play?">
+                <div class="answerSubmit">
+                    <i class="fa fa-paper-plane"></i>
+                </div>
+            </div>
+            <div class="statusContainer">THE HAWK IS READY.</div>
 
         </div>
         <div class="timeCapsuleWindow"
@@ -235,6 +394,7 @@
     <div class="rightPanel">
         <div class="panelTop">
             <img src="images/TeamIgnisLogo.png" style="height: 200px; margin-top: 25px;">
+
         </div>
     </div>
 
@@ -261,7 +421,18 @@
         <i class="fa fa-facebook-square"></i>
     </div>
 
+    <div class="footerContainer" style="float: right;">
+        #CyberHawk2017
+    </div>
+    <div class="footerContainer" style="float: right;">
+        #TeamIgnis
+    </div>
+
 </div>
 
 </body>
+
+<script>
+</script>
+
 </html>
