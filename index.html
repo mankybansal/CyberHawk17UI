@@ -7,7 +7,6 @@
     <link href="css/default.css" rel="stylesheet">
 
     <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="js/default.js"></script>
 
 
     <style>
@@ -76,7 +75,7 @@
     <div class="header">
 
         <div class="avatarContainer avatarcontainer-team-glacies">
-
+            <i class="fa fa-user-circle-o" style="font-size: 30px; opacity: .5;"></i>
         </div>
 
         <div class="headerContainer" style="float: right;">
@@ -119,24 +118,52 @@
 
     <div class="content content-team-glacies">
 
-        <div class="overlay" style="display: none;">
+        <div class="overlay">
 
-            <div class="overlay-panel overlay-intro" style="display: block;">
+            <div class="overlay-panel overlay-intro">
                 <div class="overlay-title">Welcome to CyberHawk 2017</div>
                 <hr class="section-header-dark">
                 <div class="introSlides">
-                    <div class="introSlide">Connect the clues and enter what you think the answer is.</div>
-                    <div class="introSlide">Keep up and beat the others. Keep track of your progress</div>
-                    <div class="introSlide">Play hard, so your clan can win</div>
-                    <div class="introSlide">We'll tell you if your answer has a minor typo</div>
-                    <div class="introSlide">We update every few hours. Keep checking!</div>
-                    <div class="introSlide">If there are any important announcements, we'll notify you here.</div>
+                    <div class="introSlide">
+                        <img src="images/Intro1.png" class="introImg">
+                        Connect the clues and enter what you think the answer is.
+                    </div>
+                    <div class="introSlide">
+                        <img src="images/Intro3.png" class="introImg">
+                        Keep up and beat the others. Keep track of your progress
+                    </div>
+                    <div class="introSlide">
+                        <img src="images/Intro6.png" class="introImg">
+                        Play hard, so your clan can win!
+                    </div>
+                    <div class="introSlide">
+                        <img src="images/Intro7.png" class="introImg">
+                        We update every few hours. Keep checking!
+                    </div>
+                    <div class="introSlide">
+                        <img src="images/Intro5.png" class="introImg">
+                        We'll notify you about important announcements.
+                    </div>
+                    <div class="introSlide">
+                        <img src="images/Intro2.png" class="introImg">
+                        Check the rules for answer formats, disputes, etc.
+                    </div>
                 </div>
+
+                <div class="action-button">
+                    Continue
+                </div>
+
             </div>
 
-            <div class="overlay-panel overlay-clan-picker">
+            <div class="overlay-panel overlay-clan-picker"  style="display: block;">
                 <div class="overlay-title">Pick a Clan</div>
                 <hr class="section-header-dark">
+
+                <div class="action-button">
+                    Continue
+                </div>
+
             </div>
 
             <div class="overlay-panel overlay-achievements">
@@ -173,6 +200,9 @@
                         There are no hints available right now. Come back later.
                     </div>
                 </div>
+                <div class="hintRequest">
+                    Request for Hints
+                </div>
             </div>
             <div class="recentContainer">
                 <div class="recentTitle"><i class="fa fa-history"></i> &nbsp;Recent Tries:</div>
@@ -191,6 +221,7 @@
                 <div class="levelContainer">Level 0</div>
                 <div class="questionContainer">
 
+
                     Are you ready to play CyberHawk 2017?
 
                 </div>
@@ -203,6 +234,7 @@
                 <div class="statusContainer">THE HAWK IS READY.</div>
 
             </div>
+
             <div class="timeCapsuleWindow"
                  style="transform: perspective(325px)  translate3d(0px, -50px, -50px); z-index: 7;"></div>
             <div class="timeCapsuleWindow"
@@ -221,9 +253,16 @@
         </div>
 
         <div class="rightPanel rightPanel-team-glacies">
+
             <div class="panelTop">
                 <img src="images/TeamGlaciesLogo.png" style="height: 200px; margin-top: 25px;">
             </div>
+
+            <div class="clan-info">
+                Members: <b>0</b><br>
+                Average Level: <b>0</b><br>
+            </div>
+
         </div>
     </div>
 
@@ -264,5 +303,7 @@
 -------------------------------->
 
 </body>
+
+<script type="text/javascript" src="js/default.js"></script>
 
 </html>

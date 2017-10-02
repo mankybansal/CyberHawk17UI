@@ -178,6 +178,8 @@ hr.section-header-light {
 .avatarContainer {
     width: 45px;
     height: 45px;
+    box-sizing: border-box;
+    padding: 7.5px;
     margin-top: 7.5px;
     float: right;
     border-radius: 50%;
@@ -201,13 +203,13 @@ hr.section-header-light {
 .questionContainer {
     width: 100%;
     height: calc(100% - 250px);
-    background: #333;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
     font-size: 25px;
     font-family: Roboto-Thin, sans-serif;
     padding: 35px;
     color: #FFF;
+    background: #333;
     text-align: left;
 }
 
@@ -262,7 +264,7 @@ hr.section-header-light {
     box-sizing: border-box;
 }
 
-.hint, .recent {
+.hint, .recent, .hintRequest {
     width: 100%;
     padding: 0 25px 10px 25px;
     display: inline-block;
@@ -271,6 +273,15 @@ hr.section-header-light {
     font-size: 17px;
     float: top;
     color: #777;
+}
+
+.hintRequest {
+    font-family: Roboto-Medium, sans-serif;
+    cursor: pointer;
+}
+
+.hintRequest:hover {
+    color: #555;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
@@ -309,8 +320,54 @@ hr.section-header-light {
     color: #333;
     transition: all ease .5s;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .answerSubmit:hover {
     background: rgba(0, 0, 0, 0.1);
+}
+
+.clan-info {
+    width: 100%;
+    display: block;
+    background: #EEE;
+    color: #333;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.answerCheckProgress {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999;
+}
+
+
+.introSlide {
+    display: inline-block;
+    margin: 15px;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 300px;
+    height: 200px;
+    vertical-align: top;
+}
+
+.introImg {
+   width: 270px;
+    margin-bottom: 15px;
+}
+
+.action-button {
+    border-radius: 5px;
+    background: #333;
+    border: 2px solid rgba(0, 0, 0, 0);
+    padding: 15px 30px 15px 30px;
+    color: #FFF;
+    font-size: 20px;
+    font-family: Roboto-Light, sans-serif;
+    display: inline-block;
+    transition: all ease .3s;
+    margin-top: 10px;
 }
