@@ -81,6 +81,7 @@ hr.section-header-light {
     font-family: Roboto-Light, sans-serif;
     font-size: 17px;
     color: white;
+    cursor: pointer;
 }
 
 .footerContainer {
@@ -377,4 +378,19 @@ hr.section-header-light {
     height: auto;
     margin: 80px 200px 50px 200px;
     display: inline-block;
+}
+
+.headerPopup {
+    width: 200px;
+    position: absolute;
+    top: 80px;
+    right: 80px;
+    height: 60px;
+    background: white;
+    box-shadow: 0 20px 30px rgba(0,0,0,.2);
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+    font-family: Roboto-Regular, sans-serif;
+    cursor: pointer;
 }
